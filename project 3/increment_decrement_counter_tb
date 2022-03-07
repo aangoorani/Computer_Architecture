@@ -1,0 +1,31 @@
+entity increment_decrement_counter_tb is
+end entity;
+
+architecture tb of increment_decrement_counter_tb is
+
+    component increment_decremnet_counter is
+        port(CLK, CONTROLL : IN STD_LOGIC;
+                RST : IN STD_LOGIC := 1;
+                COUNT : OUT STD_LOGIC_VECTOR (3 DOWNTO 0));
+    end component increment_decremnet_counter;
+
+    signal  RST, CLK, CONTROLL, COUNT : STD_LOGIC;
+
+begin
+
+    clock : process
+    begin
+        rst <= '0';
+        clk <= '0';
+        wait for 20 ns;
+        clk <= '1';
+        wait for 20 ns;
+    end process;
+
+    uut : increment_decremnet_counter port map(
+        CLK, CONTROLL, RST, COUNT
+    );
+
+    
+
+end tb;
