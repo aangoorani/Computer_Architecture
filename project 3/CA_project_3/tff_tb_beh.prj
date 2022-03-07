@@ -1,0 +1,2 @@
+vhdl work "tff.vhd"
+vhdl work "tff_tb.vhd"
